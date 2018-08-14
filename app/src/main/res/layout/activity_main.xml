@@ -44,14 +44,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <ImageView
+        android:id="@+id/imagemPokemon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <TextView
-        android:hint="Tipos"
         android:id="@+id/labelFieldSearch"
         android:textSize="24sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Digite o nome do mizerável"/>
+
 
     <EditText
         android:id="@+id/edtNomePokemon"

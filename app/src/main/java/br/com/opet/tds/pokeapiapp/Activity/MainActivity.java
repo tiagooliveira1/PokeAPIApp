@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.squareup.picasso.Picasso;
 
 
 import br.com.opet.tds.pokeapiapp.Model.Pokemon;
@@ -36,6 +38,7 @@ public class MainActivity extends Activity {
     private TextView textTypes;
 
     private EditText edtNameSearch;
+    private ImageView imgPokemon;
 
     private ProgressBar progressBar;
 
@@ -52,6 +55,7 @@ public class MainActivity extends Activity {
         progressBar = findViewById(R.id.progressConnection);
 
         edtNameSearch = findViewById(R.id.edtNomePokemon);
+        imgPokemon = findViewById(R.id.imagemPokemon);
 
 
 
@@ -86,7 +90,8 @@ public class MainActivity extends Activity {
 
             Log.i("POKERESPONSE",response);
             progressBar.setVisibility(ProgressBar.GONE);
-            Toast.makeText(MainActivity.this, "Erro ao capturar os dados."+pokemon.get, Toast.LENGTH_SHORT).show();
+            Picasso.get().load(pokemon.getSprites().getFrontDefault()).into(imgPokemon);
+            Toast.makeText(MainActivity.this, "Erro ao capturar os dados."+pokemon.getSprites().getFrontDefault(), Toast.LENGTH_SHORT).show();
 
         }
     };

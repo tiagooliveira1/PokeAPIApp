@@ -17,7 +17,7 @@ public class Pokemon {
     private int height;
     private int weight;
     private List<Types> types;
-    private 
+    private Sprites sprites;
 
     public Pokemon() {
     }
@@ -93,7 +93,7 @@ public class Pokemon {
         }
     }
 
-    public Sprites getSprites() { this.sprites; }
+    public Sprites getSprites() { return this.sprites; }
 
     public class Sprites{
         @SerializedName("front_default")
